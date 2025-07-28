@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="book-service" />
         <module name="user-service" />
+        <module name="borrow-service" />
       </profile>
     </annotationProcessing>
   </component>

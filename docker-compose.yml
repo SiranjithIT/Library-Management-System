@@ -32,6 +32,16 @@ services:
     networks:
       - backend
 
+  borrow-service:
+    build: ./borrow-service
+    container_name: borrow-service
+    depends_on:
+      - mysql
+    ports:
+      - "8083:8083"
+    networks:
+      - backend
+
 networks:
   backend:
     driver: bridge
