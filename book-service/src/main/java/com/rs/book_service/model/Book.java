@@ -22,14 +22,26 @@ public class Book {
 
     private List<String> genre;
 
+    @Column(nullable = false)
+    private Long quantity;
+
     public Book() {
     }
 
-    public Book(String title, String author, String description, List<String> genre) {
+    public Book(String title, String author, String description, List<String> genre, Long quantity) {
         this.title = title;
         this.author = author;
         this.description = description;
         this.genre = genre;
+        this.quantity = quantity;
+    }
+
+    public Long getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Long quantity) {
+        this.quantity = quantity;
     }
 
     public UUID getId() {

@@ -44,4 +44,15 @@ public class BookService {
         }
     }
 
+    public Book updateQuantity(UUID id, Long quantity){
+        Optional<Book> bookOpt = getBookById(id);
+        if(bookOpt.isPresent()){
+            Book book = bookOpt.get();
+            book.setQuantity(quantity);
+            bookRepo.save(book);
+            return book;
+        }
+        throw new RuntimeException();
+    }
+
 }

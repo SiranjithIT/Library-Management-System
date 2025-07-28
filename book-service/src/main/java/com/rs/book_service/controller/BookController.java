@@ -43,4 +43,15 @@ public class BookController {
         }
         return ResponseEntity.ok(response);
     }
+
+    @PutMapping("/{id}/quantity-update/{quantity}")
+    public ResponseEntity<Book> updateBook(@PathVariable UUID id, @PathVariable Long quantity){
+        try{
+            Book book = bookService.updateQuantity(id, quantity);
+            return ResponseEntity.ok(book);
+        }
+        catch (Exception e){
+            return ResponseEntity.badRequest().build();
+        }
+    }
 }
